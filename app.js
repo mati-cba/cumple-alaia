@@ -1,7 +1,7 @@
 // Configuración de Supabase
 const SUPABASE_URL = 'https://diltvzdjaiwcfrbrwvkr.supabase.co';
 // IMPORTANTE: Reemplaza con tu Publishable Key real de Supabase
-const SUPABASE_ANON_KEY = 'TU_PUBLIC_KEY_AQUI'; 
+const SUPABASE_ANON_KEY = 'sb_publishable_qXuPeM0tiVbNtS8Ezsr8bg_lxdaVkJV'; 
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
