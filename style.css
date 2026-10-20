@@ -24,34 +24,21 @@ body {
     align-items: center;
 }
 
-/* Cabecera y personaje sin fondo blanco */
+/* Personaje de Bluey Flotante (sin fondo) */
 .header-banner {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-.bluey-avatar-container {
-    width: 160px !important;
-    height: auto !important;
-    max-width: 160px !important;
-    background: transparent !important; /* Sin fondo blanco */
-    border: none !important;            /* Sin borde */
-    box-shadow: none !important;        /* Sin sombra de caja */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    animation: float 3.5s ease-in-out infinite;
-}
-
 .bluey-img {
-    width: 100% !important;
-    height: auto !important;
-    max-width: 100% !important;
+    width: 150px;
+    height: auto;
+    max-width: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 10px 15px rgba(0, 92, 138, 0.15)); /* Sombra suave adaptada a la silueta PNG */
+    filter: drop-shadow(0 10px 15px rgba(0, 92, 138, 0.18)); /* Sombra suave adaptada al contorno del PNG */
+    animation: float 3.5s ease-in-out infinite;
 }
 
 @keyframes float {
