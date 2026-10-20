@@ -77,5 +77,5 @@ function mostrarMensaje(texto, tipo) {
     
     setTimeout(() => {
         responseMessage.classList.add('hidden');
-    }, 5000);
+    }, 15000);
 }
