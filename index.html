@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Es el cumple de Alaia!</title>
+    <!-- Importamos la librería de Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuente amigable estilo infantil -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Elemento decorativo superior (Personaje / Temática Bluey) -->
+        <div class="header-banner">
+            <div class="bluey-character-placeholder">
+                <!-- Aquí puedes colocar la imagen de Bluey o dejar la estructura optimizada -->
+                <span class="paw">🐾</span>
+                <div class="bluey-face">🐶</div>
+                <span class="paw">🐾</span>
+            </div>
+        </div>
+
+        <!-- Título principal -->
+        <h1 class="title">
+            ¡Es el <span class="highlight">cumple</span><br>de Alaia! <span class="paws">🐾🐾</span>
+        </h1>
+        <p class="subtitle">Confirmá si venís a festejar con ella</p>
+
+        <div class="decor-icons">
+            <span>🐾</span> <span>🎈</span> <span>🐾</span> <span>🎉</span> <span>🐾</span>
+        </div>
+
+        <!-- Tarjeta del Formulario -->
+        <div class="card">
+            <h2>Tu confirmación 🎀</h2>
+            
+            <form id="attendance-form">
+                <div class="input-group-row">
+                    <div class="input-group">
+                        <label for="nombre">NOMBRE</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Chloe" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="apellido">APELLIDO</label>
+                        <input type="text" id="apellido" name="apellido" placeholder="Ej: García" required>
+                    </div>
+                </div>
+
+                <label class="question-label">¿VENÍS A JUGAR?</label>
+                
+                <div class="options-container">
+                    <button type="button" class="option-btn" data-value="si">
+                        🎉 ¡Sí voy!
+                    </button>
+                    <button type="button" class="option-btn" data-value="no">
+                        😔 No puedo
+                    </button>
+                </div>
+
+                <button type="submit" id="submit-btn" class="confirm-btn">
+                    Confirmar 🐾
+                </button>
+            </form>
+
+            <!-- Mensaje de éxito / error -->
+            <div id="response-message" class="hidden"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
