@@ -38,15 +38,14 @@ form.addEventListener('submit', async (e) => {
     submitBtn.textContent = 'Enviando...';
 
     try {
-        // Asumiendo que tu tabla en Supabase se llama 'asistencias' 
-        // y tiene columnas: nombre, apellido, asistencia (boolean o text)
+        // Inserción adaptada a tu tabla 'confirmaciones' y columna 'asiste'
         const { data, error } = await supabaseClient
-            .from('asistencias')
+            .from('confirmaciones')
             .insert([
                 { 
                     nombre: nombre, 
                     apellido: apellido, 
-                    asistencia: asistenciaSeleccionada === 'si' 
+                    asiste: asistenciaSeleccionada === 'si' 
                 }
             ]);
 
