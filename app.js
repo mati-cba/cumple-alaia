@@ -38,7 +38,6 @@ form.addEventListener('submit', async (e) => {
     submitBtn.textContent = 'Enviando...';
 
     try {
-        // Inserción adaptada a tu tabla 'confirmaciones' y columna 'asiste'
         const { data, error } = await supabaseClient
             .from('confirmaciones')
             .insert([
@@ -51,14 +50,20 @@ form.addEventListener('submit', async (e) => {
 
         if (error) throw error;
 
-        mostrarMensaje('¡Muchas gracias por confirmar! 🐾 Nos vemos en el cumple de Alaia.', 'success');
+        // Mensaje personalizado según la asistencia
+        if (asistenciaSeleccionada === 'si') {
+            mostrarMensaje('¡Muchas gracias por confirmar! 🐾 Nos vemos en el cumple de Alaia.', 'success');
+        } else {
+            mostrarMensaje('¡Gracias por avisarnos! 🎈 Lástima que no puedas venir, ¡te vamos a extrañar!', 'success');
+        }
+
         form.reset();
         optionBtns.forEach(b => b.classList.remove('selected'));
         asistenciaSeleccionada = null;
 
-    } catch (error) {
-        console.error('Error al guardar:', error.message);
-        mostrarMensaje('Hubo un error al registrar tu respuesta. Intentalo de nuevo.', 'error');
+    } catch (err) {
+        console.error('Error al guardar:', err);
+        mostrarMensaje('Ocurrió un error al guardar tu respuesta. Por favor intentá de nuevo.', 'error');
     } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Confirmar 🐾';
